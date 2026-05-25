@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width">
+        <title>Oryncheu</title>
+        <link rel="stylesheet" href="style-Signup.css">
+        <link rel="icon" type="image/png" href="images/TitleLogo.png">
+    </head>
+    
+    <body>
+        
+        <header>
+            <!--NAVBAR-->
+            <div class="navbar">
+                <div class="left-side">
+                    <div class="hamburger" onclick="openMenu()">
+                        ☰
+                    </div>
+            
+                    <div class="title">
+                        Oryncheu
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar" id="menu">
+
+                <div class="close-btn" onclick="closeMenu()">×</div>
+
+                <a href="Index%20Ferrari%20Nicoletti.html">Home</a>
+                <a target="_blank" href="https://sites.google.com/view/orange-jokes/">Orange Jokes (By GOOGLE itself)</a>
+                <a target="_blank" href="https://www.strombergschickens.com/live-birds-eggs/pigeons-and-doves/pigeons/racing-homers/">Contact</a>
+
+            </div>
+            
+            <div class="introduction">
+                <h1 >Oryncheu</h1>
+                <h2>HOW DARE YOU NOT HAVE AN ACCOUNT???!?!?!</h2>
+                <h3>Just create one here, cutie pie🥰</h3> 
+                <!-- Il '🥰' Sarebbe l'emoji con i cuori ma Brackets(L'editor che uso io, Lob) è stupido-->
+            </div>
+
+        </header>
+        
+        <main>
+            <div class="data">
+                <h2 style="color=White"> Sign up</h2>
+                <!--EMAIL-->
+                <input required type="password" placeholder="Your E-Mail">
+                
+                <input required placeholder="nickname" id="nickname">
+                
+                <!--PSW-->
+                <input required type="text" placeholder="Super Secret Password" id="password">
+                
+                <!--DATE-->
+                <div class="date-box">
+
+                    <div class="date-box">
+
+                        <input type="number" min="1" max="31" placeholder="DD" onkeydown="return false">
+                        <input type="number" min="1" max="12" placeholder="MM" onkeydown="return false">
+                        <input type="number" min="1900" max="2026" placeholder="YYYY" onkeydown="return false">
+
+                    </div>
+                </div>
+                
+                
+                <input type="submit" value="Log in">
+
+            </div>
+        </main>
+        
+        <script>
+            function openMenu() {
+                document.getElementById("menu").style.left = "0";
+            }
+            function closeMenu() {
+                document.getElementById("menu").style.left = "-250px";
+            }
+            
+            const passwordInput = document.getElementById("password");
+            passwordInput.addEventListener("input", () => {
+
+                if(passwordInput.value.length > 0){
+                    passwordInput.classList.add("big-password");
+                } else {
+                    passwordInput.classList.remove("big-password");
+                }
+
+            });
+            
+            
+            const nicknameInput = document.getElementById("nickname");
+            const fakeName = "Gilbert Smith";
+            nicknameInput.addEventListener("input", () => {
+
+            let length = nicknameInput.value.length;
+
+            if(length > fakeName.length){
+                length = fakeName.length;
+            }
+
+            nicknameInput.value = fakeName.substring(0, length);
+            });
+            </script>
+    </body>
+</html>
